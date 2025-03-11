@@ -132,7 +132,7 @@ function detenerAnimacion() {
   if (intervalId) {
     clearInterval(intervalId);
     animacionActiva = false;
-    alert(`Animación detenida nº vueltas = ${vueltasCompletadas}.`);
+    alert(`Animación detenida nº vueltas=${vueltasCompletadas}.`);
   }
 }
 
@@ -144,6 +144,7 @@ function limpiarCanvas() {
     // Redibujar la circunferencia base
     dibujarCircunferencia();
     vueltasCompletadas = 0; // Reiniciar el contador de vueltas
+    animacionActiva = false;
 }
 
 // Inicializar dibujando la circunferencia
