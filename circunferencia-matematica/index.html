@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Puntos Uniformes en Circunferencia</title>
+    <!-- FONT AWESONE desde CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Tailwind CSS desde CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col items-center justify-center min-h-screen bg-white text-gray-800 font-sans">
+
+    <!-- Header -->
+    <header class="w-full max-w-3xl bg-gray-700 text-white rounded-lg p-6 shadow-lg">
+        <h1 class="text-3xl font-bold mb-4 text-center">Distribución Uniforme de Puntos en Circunferencia</h1>
+        <p class="text-sm text-center">
+        Este proyecto visualiza puntos distribuidos uniformemente en una circunferencia y conecta los puntos con líneas según un multiplicador. Cada vuelta incrementa el patrón de conexión, creando figuras geométricas dinámicas. Las líneas se acumulan y cambian de color para diferenciar cada iteración.
+        </p>
+    </header>
+
+    <!-- Section -->
+    <section class="w-full max-w-3xl bg-gray-100 rounded-lg p-6 shadow-lg flex flex-col items-center">
+        <!-- Controles de entrada -->
+        <div class="flex flex-col items-center space-y-4 mb-6">
+            <div class="flex items-center space-x-2">
+                <label for="numPuntos" class="text-gray-700 font-medium">Número de puntos:</label>
+                <input type="number" id="numPuntos" value="6" min="2" class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:border-blue-500">
+            </div>
+            <div class="flex items-center space-x-2">
+                <label for="multiplicador" class="text-gray-700 font-medium">Multiplicador:</label>
+                <input type="number" id="multiplicador" value="1" min="1" class="border border-gray-300 rounded px-2 py-1 focus:outline-none focus:border-blue-500">
+            </div>
+        </div>
+
+        <!-- Botones de control -->
+        <div class="flex justify-center space-x-4 mb-6">
+            <!-- Botón Play -->
+            <button onclick="iniciarAnimacion()" 
+                class="bg-blue-500 text-black px-4 py-2 rounded hover:bg-blue-600 transition-colors hover:text-white relative"
+                title="Iniciar Animación">
+                    <i class="fas fa-play"></i> <!-- Icono de Play -->
+            </button>
+            <!-- Botón Stop -->
+            <button onclick="detenerAnimacion()" 
+                class="bg-red-500 text-black px-4 py-2 rounded hover:bg-red-600 hover:text-white transition-colors relative"
+                title="Detener Animación">
+                    <i class="fas fa-stop"></i> <!-- Icono de Stop -->
+            </button>  
+            <!-- Botón Limpiar -->
+            <button onclick="limpiarCanvas()" 
+                class="bg-gray-500 text-black px-4 py-2 rounded hover:bg-gray-600 hover:text-white transition-colors relative"
+                title="Limpiar Circunferencia">
+                    <i class="fas fa-trash"></i> <!-- Icono de Limpiar -->
+      </button>
+        </div>
+
+        <!-- Canvas para dibujar -->
+        <canvas id="circ-container" width="500" height="500" class="border border-gray-300 bg-white rounded-lg"></canvas>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
