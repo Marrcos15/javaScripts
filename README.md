@@ -4,7 +4,7 @@ Este repositorio contiene una colección de pequeños programas realizados de ma
 
 ## Estructura del Repositorio
 
-- **Dibujar en Circunferencia con Matemáticas**
+- **circunferencia-matematica**
     - `index.html`
     - `script.js`
 
